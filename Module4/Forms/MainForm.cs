@@ -24,9 +24,8 @@ namespace Module4.Forms
             //Поиск аккаунта в БД
             accounts =
                 modelEF.Accounts.FirstOrDefault(
-                    acc => acc.Login == textBoxLogin.Text
-                && acc.Password == textBoxPassword.Text);
-
+                    x => x.Login == textBoxLogin.Text
+                && x.Password == textBoxPassword.Text);
             if (accounts != null)
             {
                 if (accounts.StatusID == 1)
@@ -37,10 +36,34 @@ namespace Module4.Forms
                 {
                     MessageBox.Show("Вы заблокированы. Обратитесь к администратору");
                 }
+                return;
             }
             else
             {
-                MessageBox.Show("Вы ввели неверный логин или пароль. Пожалуйста проверьте ещё раз введенные данные");
+                accounts =
+               modelEF.Accounts.FirstOrDefault(
+                   x => x.Login == textBoxLogin.Text);
+                if (accounts != null)
+                {
+                    if (accounts.StatusID == 2)
+                    {
+                        MessageBox.Show("Вы заблокированы. Обратитесь к администратору");
+                        return;
+                    }
+                    accounts.BadLoginTry += 1;
+                    modelEF.SaveChanges();
+                    MessageBox.Show($"Вы не правильно ввели пароль. У вас осталось попыток {3 - accounts.BadLoginTry}");
+                    if (accounts.BadLoginTry == 3)
+                    {
+                        accounts.StatusID = 2;
+                        modelEF.SaveChanges();
+                        MessageBox.Show("Вы заблокированы. Обратитесь к администратору");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Вы ввели неверный логин или пароль. Пожалуйста проверьте ещё раз введенные данные");
+                }
             }
 
         }
