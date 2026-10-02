@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.labelMain = new System.Windows.Forms.Label();
-            this.textBoxLogin = new System.Windows.Forms.TextBox();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelLogin = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.buttonEnter = new System.Windows.Forms.Button();
-            this.panelCaptch = new System.Windows.Forms.Panel();
             this.buttonReady = new System.Windows.Forms.Button();
             this.buttonRight = new System.Windows.Forms.Button();
             this.pictureBoxCaptch1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxCaptch2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxCaptch3 = new System.Windows.Forms.PictureBox();
             this.pictureBoxCaptch4 = new System.Windows.Forms.PictureBox();
-            this.panelCaptch.SuspendLayout();
+            this.panelCaptch = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCaptch1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCaptch2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCaptch3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCaptch4)).BeginInit();
+            this.panelCaptch.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelMain
@@ -57,23 +57,6 @@
             this.labelMain.Size = new System.Drawing.Size(141, 25);
             this.labelMain.TabIndex = 0;
             this.labelMain.Text = "Авторизация";
-            // 
-            // textBoxLogin
-            // 
-            this.textBoxLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxLogin.Location = new System.Drawing.Point(158, 104);
-            this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(256, 31);
-            this.textBoxLogin.TabIndex = 0;
-            // 
-            // textBoxPassword
-            // 
-            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPassword.Location = new System.Drawing.Point(158, 166);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(256, 31);
-            this.textBoxPassword.TabIndex = 1;
             // 
             // labelLogin
             // 
@@ -95,6 +78,23 @@
             this.labelPassword.TabIndex = 0;
             this.labelPassword.Text = "Пароль";
             // 
+            // textBoxLogin
+            // 
+            this.textBoxLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxLogin.Location = new System.Drawing.Point(158, 104);
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(256, 31);
+            this.textBoxLogin.TabIndex = 0;
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPassword.Location = new System.Drawing.Point(158, 166);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
+            this.textBoxPassword.Size = new System.Drawing.Size(256, 31);
+            this.textBoxPassword.TabIndex = 1;
+            // 
             // buttonEnter
             // 
             this.buttonEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -105,21 +105,6 @@
             this.buttonEnter.Text = "Войти";
             this.buttonEnter.UseVisualStyleBackColor = true;
             this.buttonEnter.Click += new System.EventHandler(this.buttonEnter_Click);
-            // 
-            // panelCaptch
-            // 
-            this.panelCaptch.Controls.Add(this.pictureBoxCaptch4);
-            this.panelCaptch.Controls.Add(this.pictureBoxCaptch3);
-            this.panelCaptch.Controls.Add(this.pictureBoxCaptch2);
-            this.panelCaptch.Controls.Add(this.pictureBoxCaptch1);
-            this.panelCaptch.Controls.Add(this.buttonRight);
-            this.panelCaptch.Controls.Add(this.buttonReady);
-            this.panelCaptch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCaptch.Location = new System.Drawing.Point(0, 0);
-            this.panelCaptch.Name = "panelCaptch";
-            this.panelCaptch.Size = new System.Drawing.Size(523, 311);
-            this.panelCaptch.TabIndex = 3;
-            this.panelCaptch.Visible = false;
             // 
             // buttonReady
             // 
@@ -179,6 +164,21 @@
             this.pictureBoxCaptch4.TabIndex = 1;
             this.pictureBoxCaptch4.TabStop = false;
             // 
+            // panelCaptch
+            // 
+            this.panelCaptch.Controls.Add(this.pictureBoxCaptch4);
+            this.panelCaptch.Controls.Add(this.pictureBoxCaptch3);
+            this.panelCaptch.Controls.Add(this.pictureBoxCaptch2);
+            this.panelCaptch.Controls.Add(this.pictureBoxCaptch1);
+            this.panelCaptch.Controls.Add(this.buttonRight);
+            this.panelCaptch.Controls.Add(this.buttonReady);
+            this.panelCaptch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCaptch.Location = new System.Drawing.Point(0, 0);
+            this.panelCaptch.Name = "panelCaptch";
+            this.panelCaptch.Size = new System.Drawing.Size(523, 311);
+            this.panelCaptch.TabIndex = 3;
+            this.panelCaptch.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,11 +197,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.panelCaptch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCaptch1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCaptch2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCaptch3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCaptch4)).EndInit();
+            this.panelCaptch.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,18 +210,18 @@
         #endregion
 
         private System.Windows.Forms.Label labelMain;
-        private System.Windows.Forms.TextBox textBoxLogin;
-        private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label labelLogin;
         private System.Windows.Forms.Label labelPassword;
+        private System.Windows.Forms.TextBox textBoxLogin;
+        private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Button buttonEnter;
-        private System.Windows.Forms.Panel panelCaptch;
-        private System.Windows.Forms.Button buttonRight;
         private System.Windows.Forms.Button buttonReady;
-        private System.Windows.Forms.PictureBox pictureBoxCaptch4;
-        private System.Windows.Forms.PictureBox pictureBoxCaptch3;
-        private System.Windows.Forms.PictureBox pictureBoxCaptch2;
+        private System.Windows.Forms.Button buttonRight;
         private System.Windows.Forms.PictureBox pictureBoxCaptch1;
+        private System.Windows.Forms.PictureBox pictureBoxCaptch2;
+        private System.Windows.Forms.PictureBox pictureBoxCaptch3;
+        private System.Windows.Forms.PictureBox pictureBoxCaptch4;
+        private System.Windows.Forms.Panel panelCaptch;
     }
 }
 
